@@ -8,9 +8,11 @@
         <script src="MyJs.js"></script>
     </head>
     <body>
-		<select onchange='update(value)'>
-			<option value="noParcours=80&noArret=4598&codeDirection=1&date=">80 vers JaqueCartier</option>
-			<option value="noParcours=79G&noArret=4598&codeDirection=1&date=">79G vers Cama</option>
+		<select id="mainSelect" onchange='sendBus(value)'>
+			<option value="80,1">80 vers JaqueCartier</option>
+			<option value="79G,1">79G vers Cama</option>
 		</select>
+        <input type="button" value="show time" onclick="getMinutes()">
+        <p id="minutes"></p>
     </body>
 </html>
