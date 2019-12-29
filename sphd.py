@@ -2,10 +2,14 @@
 import time
 import requests
 
-resp = requests.post('https://127.0.0.1/minutes')
-print(resp)
-#sphd.write_string('15m', brightness=0.8)
-#sphd.show()
-
 while True:
-    time.sleep(2)
+    try:
+        resp = requests.post('http://localhost/minutes')
+        minutes = resp.content.decode('utf-8') + 'm'
+    except:
+        minutes = 'Nanm'
+    print(minutes)
+    sphd.clear()
+    sphd.write_string(minutes, brightness=0.8)
+    sphd.show()
+    time.sleep(5)
