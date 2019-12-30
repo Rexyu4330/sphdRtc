@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Matrice Led</title>
+        <title>Rtc config</title>
         <meta charset="utf-8">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="MyJs.js"></script>
     </head>
     <body>
-		<select id="mainSelect" onchange='sendBus(value)'>
-			<option value="80,1">80 vers JaqueCartier</option>
-			<option value="79G,1">79G vers Cama</option>
+		<select id="mainSelect" onchange="sendBus(value)" style="height: 30px; font-size: 24px">
+			<option value="80,1,4598">80 vers Jacques-Cartier</option>
+			<option value="80,0,4479">80 vers Aeroport</option>
+			<option value="79G,1,4598">79G vers Camaradière</option>
 		</select>
-        <input type="button" value="show time" onclick="getMinutes()">
-        <p id="minutes"></p>
+        <br>
+        <input type="button" value="show time" onclick="getMinutes()" style="margin-top: 12px">
+        <p id="minutes" style="font-size: 24px"></p>
     </body>
 </html>

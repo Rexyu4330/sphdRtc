@@ -3,7 +3,7 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 const d = new Date();
-app.listen(80, function () {console.log("Listening on port 80")});
+app.listen(3000, function () {console.log("Listening on port 3000")});
 app.use(express.static("website"));
 app.use(bodyParser.json());
 
@@ -11,6 +11,7 @@ var minutes = 'Nan'
 var websiteData = {
     bus: '80',
     dir: '1',
+    arret: '4598',
     on: true
 }
 
@@ -33,7 +34,7 @@ app.post("/minutes", (req, res) => {
 function getMinutes() {
     if (websiteData.on) {
         let date = d.getFullYear().toString()+(d.getMonth()+1).toString()+d.getDate().toString();
-        axios.get(`https://wssiteweb.rtcquebec.ca/api/v2/horaire/BorneVirtuelle_ArretParcours/?noParcours=${websiteData.bus}&noArret=4598&codeDirection=${websiteData.dir}&date=${date}`).then(res => {
+        axios.get(`https://wssiteweb.rtcquebec.ca/api/v2/horaire/BorneVirtuelle_ArretParcours/?noParcours=${websiteData.bus}&noArret=${websiteData.arret}&codeDirection=${websiteData.dir}&date=${date}`).then(res => {
             callback(res.data);
         }).catch(error => {console.log(error)});
     }

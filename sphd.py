@@ -1,10 +1,11 @@
-#import scrollphathd as sphd
+import scrollphathd as sphd
 import time
 import requests
+#sphd.rotate(180)
 
 while True:
     try:
-        resp = requests.post('http://localhost/minutes')
+        resp = requests.post('http://localhost:3000/minutes')
         minutes = resp.content.decode('utf-8') + 'm'
     except:
         minutes = 'Nanm'
