@@ -40,7 +40,7 @@ Edit rc.local:
 sudo nano /etc/rc.local
 ```
 ```
-sudo node /home/pi/sphdRtc/server.js &
+sudo bash /home/pi/sphdRtc/startserver.sh &
 sudo python3 /home/pi/sphdRtc/sphd.py &
 ```
 

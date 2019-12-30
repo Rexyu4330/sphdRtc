@@ -1,7 +1,7 @@
 import scrollphathd as sphd
 import time
 import requests
-#sphd.rotate(180)
+sphd.rotate(180)
 
 while True:
     try:
